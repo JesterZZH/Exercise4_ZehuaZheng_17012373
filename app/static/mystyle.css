@@ -1,0 +1,121 @@
+.center {
+    text-align: left;
+    margin: auto;
+    display: table;
+}
+
+.NavBar {
+    float: auto;
+    display: flex;
+    margin: 0;
+    overflow: hidden;
+    background-color: steelblue;
+}
+
+.NavBar a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.NavBar a:hover {
+    background-color: white;
+    color: black
+}
+
+.active{
+    background-color: #005cbf;
+    color: white;
+}
+
+.nav-bar-title {
+    color: white;
+    font-size: 35px;
+}
+
+.nav-bar-link {
+    font-size: 20px;
+    margin-top:2rem;
+    margin-left: 1rem;
+}
+
+.nav-bar-img {
+    margin: 10px;
+}
+
+.search-form {
+    margin: 2rem;
+
+}
+
+.search-form-input {
+    width: 30%;
+    height: 3rem;
+    border-radius: 6px;
+    font-size: 20px;
+}
+
+.search-form-button{
+    color: white;
+    font-size: 20px;
+    height: 3rem;
+    width: 6rem;
+    border-radius: 6px;
+    background-color: #b3d7ff;
+}
+
+.dummy-text {
+    margin: 2rem;
+
+}
+
+.text-head {
+    color: #abdde5;
+}
+
+.text-content {
+    color: #686868;
+    font-size: 20px;
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+.sign-up-title {
+    font-size: 50px;
+    -webkit-text-stroke: 2px dodgerblue;
+    -webkit-text-fill-color: lightskyblue;
+}
+
+.sign-up-input {
+    border-radius: 6px;
+    border: 1px solid deepskyblue;
+    padding-left: 1rem;
+    font-size: 15px;
+    margin-top: 10px;
+    height: 3rem;
+    width: 25rem;
+}
+
+.sign-up-form {
+    color:#117a8b;
+    font-size: 25px;
+    padding-top: 25px;
+}
+
+.protocol {
+    color: slategrey;
+    padding-top: 30px
+}
+
+.submit {
+    color: white;
+    background-color: dodgerblue;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 2rem;
+    width: 6rem;
+    height: 3rem;
+    border-radius: 6px;
+}
