@@ -1,22 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="../static/mystyle.css">
-    <title>Home Page</title>
-</head>
+{% extends "base.html" %}
+{% block title %} Home {% endblock %}
 
-<body>
-    <nav class="NavBar">
-        <img class="nav-bar-img" src="../static/blog-945x500.jpg" alt="RAINY DAY ART" width="200" height="106" >
-        <p class="nav-bar-title">Rain Blog</p>
-        <div class="nav-bar-link">
-            <a class="nav-bar-link active" href="Index.html">Home</a>
-            <a class="nav-bar-link" href="SignUp.html">Sign-Up</a>
-        </div>
-    </nav>
-
+{% block content %}
     <form class="search-form">
         <input class="search-form-input" type="search" placeholder="Search for cities or blog post content" aria-label="Search" required>
         <button class="search-form-button" type="submit">Search</button>
@@ -32,5 +17,4 @@
             <br><br>The mountains are now changing over from rain to snow and the predicted accumulated snow total over the next 48 h (through 4 AM Monday) projects as much as 6-18 inches in terrain.  Some lowland areas (e.g., around Bellingham and the coast) may get some very light snow.
         </p>
     </div>
-</body>
-</html>
+{% endblock %}

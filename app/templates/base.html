@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}{{ title }}{% endblock %}
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/static/css/my_style.css">
+</head>
+
+<body>
+    <nav class="NavBar">
+        <img class="nav-bar-img" src="../static/blog-945x500.jpg" alt="RAINY DAY ART" width="200" height="106" >
+        <p class="nav-bar-title">Rain Blog</p>
+        <div class="nav-bar-link">
+            <a class="nav-bar-link active" href="{{ url_for('main.index') }}">Home</a>
+            <a class="nav-bar-link" href="{{ url_for('main.signup') }}">Sign-Up</a>
+        </div>
+    </nav>
+
+<div role=main>
+    {% block content %}
+    {% endblock %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+</div>
+
+</body>
+</html>

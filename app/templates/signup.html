@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+    {% if form.errors %}
+        <p><strong>The form contains errors:</strong>
+        <ul>
+            {% for error in form.errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <div class="center">
+        <h1 class="sign-up-title">Create a New Account</h1>
+
+        <form class="SignUp" action="" method="post" novalidate>
+            {{ form.hidden_tag() }}
+            <div class="sign-up-form">
+                {{ form.username.label(class="sign-up-label") }}
+                <br>
+                {{ form.username(class="sign-up-input", placeholder="Username")}}
+            </div>
+            <div class="sign-up-form">
+                {{ form.email_address.label(class="sign-up-label") }}
+                <br>{{ form.email_address(class="sign-up-input", placeholder="Enter Email Address") }}
+            </div>
+            <div class="sign-up-form">
+                {{ form.password.label(class="sign-up-label") }}
+                <br>{{ form.password(class="sign-up-input", placeholder="Enter Password") }}
+                <br>{{ form.password_confirm(class="sign-up-input", Placeholder="Repeat Password") }}
+            </div>
+            <p>{{ form.submit(class='submit') }}</p>
+        </form>
+    </div>
+{% endblock %}
