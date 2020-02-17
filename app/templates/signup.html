@@ -4,10 +4,12 @@
 {% block content %}
     {% if form.errors %}
         <p><strong>The form contains errors:</strong>
-        <ul>
-            {% for error in form.errors %}
-                <li>{{ error }}</li>
+        <ul class="alert-warning list-unstyled">
+        {% for field_name, field_errors in form.errors|dictsort if field_errors %}
+            {% for error in field_errors %}
+                <li>{{ form[field_name].label }}: {{ error }}</li>
             {% endfor %}
+        {% endfor %}
         </ul>
     {% endif %}
     <div class="center">
@@ -21,8 +23,8 @@
                 {{ form.username(class="sign-up-input", placeholder="Username")}}
             </div>
             <div class="sign-up-form">
-                {{ form.email_address.label(class="sign-up-label") }}
-                <br>{{ form.email_address(class="sign-up-input", placeholder="Enter Email Address") }}
+                {{ form.email.label(class="sign-up-label") }}
+                <br>{{ form.email(class="sign-up-input", placeholder="Enter Email Address") }}
             </div>
             <div class="sign-up-form">
                 {{ form.password.label(class="sign-up-label") }}

@@ -35,7 +35,7 @@ Note: SQLite does not have a datetime data type, use text and enter dates as YYY
 # Create a connection object that represents the database
 import sqlite3
 
-conn = sqlite3.connect('rain.db')
+conn = sqlite3.connect('rain.sqlite')
 
 # Create a cursor object
 c = conn.cursor()
@@ -45,7 +45,8 @@ c.execute('''CREATE TABLE user
         (
         user_id INTEGER PRIMARY KEY,
         username TEXT NOT NULL,
-        email TEXT NOT NULL
+        email TEXT NOT NULL,
+        password TEXT NOT NULL 
         )
         ''')
 
@@ -73,11 +74,11 @@ c.execute('''
          ''')
 
 # Insert 'User' data to user table
-sql = '''INSERT INTO user (username,email) VALUES (?,?)'''
+sql = '''INSERT INTO user (username,email,password) VALUES (?,?,?)'''
 values = [
-        ('weatherman', 'jo@bloggs.com'),
-        ('itrains', 'itrains@alot.co.uk'),
-        ('sunny', 'sunny_grl@sunshine.co.uk')
+        ('weatherman', 'jo@bloggs.com','test1pass'),
+        ('itrains', 'itrains@alot.co.uk','test2pass'),
+        ('sunny', 'sunny_grl@sunshine.co.uk','test3pass')
         ]
 c.executemany(sql,values)
 
